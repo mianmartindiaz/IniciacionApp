@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyecto_lavera.Tabbed.QR"
+             Title="Buscar"
+             BackgroundColor="#15261C">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Text="Código QR" x:Name="btnScan" BackgroundColor="#8EAC18" TextColor="#15261C"/>
+            <Label x:Name="barcode" TextColor="#8EAC18" Margin="10,0,10,0" />
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Entry x:Name="buscar" Placeholder="Escribe tu busqueda" TextColor="#8EAC18" FontSize="Small"  WidthRequest="180" />
+                    <StackLayout Orientation="Vertical">
+                        <Button Text="Busqueda Servicio" TextColor="#15261C" FontSize="Small" BackgroundColor="#8EAC18" WidthRequest="180" Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <ListView x:Name="ListServicios" HasUnevenRows="True" BackgroundColor="#15261C" SeparatorColor="#8EAC18" ItemSelected="ListServicios_ItemSelected" Margin="0,20,0,0"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="220"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Url}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0"/>
+                                <Label Text="{Binding Nombre}" TextColor="#8EAC18" FontSize="Medium" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Column="1" Grid.Row="0"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

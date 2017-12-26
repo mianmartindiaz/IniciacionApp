@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyecto_lavera.Pagina.Informacion" Title="Informacion"
+             BackgroundColor="#15261C">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#15261C">
+            <StackLayout Orientation="Horizontal" BackgroundColor="#8EAC18">
+                <Image x:Name="menu" Source="inicio_icon" HeightRequest="30" WidthRequest="30" Margin="0,5,0,0"/>
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="Cabecera" Margin="30,0,0,0" HorizontalOptions="Center" TextColor="#15261C" FontSize="Large" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                </StackLayout>
+            </StackLayout>
+            <Label  TextColor="White" Text="PUEBLO" FontSize="Micro"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="180"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="imagenes" Grid.Row="0" Grid.Column="0"/>
+                <StackLayout Grid.Row="0" Grid.Column="1" Padding="0,0,50,0">
+                    <Label Text="Habitantes:" TextColor="White" FontSize="Micro"/>
+                    <Label x:Name="Habitantes" TextColor="White" FontSize="Micro" FontAttributes="Bold"/>
+                    <Label Text="Extensión:" TextColor="White"  FontSize="Micro"  />
+                    <Label x:Name="Extension" TextColor="White" FontSize="Micro" FontAttributes="Bold"/>
+
+                </StackLayout>
+            </Grid>
+            <ScrollView>
+                <Label x:Name="descripcion" TextColor="White" FontSize="Small" Margin="10,0,10,0"/>
+            </ScrollView>
+            <Label Text="OPINIONES"  FontSize="Small" TextColor="White" FontAttributes="Bold" Margin="0,10,0,0"/>
+            <ListView x:Name="ListOpiniones" HasUnevenRows="True" BackgroundColor="#15261C" 
+                      SeparatorColor="#8EAC18"  VerticalOptions="End"  Margin="10,0,10,0"  ItemSelected="ListOpiniones_ItemSelected" >
+              
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding User }" Grid.Column="0" Grid.Row="0" TextColor="#8EAC18" FontSize="Micro"/>
+                                <Label Text="{Binding Puntuacion}"  Grid.Column="0" Grid.Row="1" TextColor="#8EAC18" FontSize="Micro" FontAttributes="Bold"/>
+                                <Label Text="{Binding Fecha}"  Grid.Column="1" Grid.Row="1" TextColor="#8EAC18" FontSize="Micro" />
+                                <Label Text="{Binding Comentario}"  Grid.Column="0" Grid.Row="2" TextColor="White" FontSize="Micro" Grid.ColumnSpan="3"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyecto_lavera.Pagina.Restaurantes">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#8EAC18">
+            
+                <StackLayout Orientation="Horizontal">
+                    <Image x:Name="menu" Source="inicio_icon" HeightRequest="30" WidthRequest="30" Margin="0,5,0,0"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label x:Name="Cabecera" Margin="30,0,0,0" HorizontalOptions="Center" TextColor="#15261C" FontSize="Large" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                    </StackLayout>
+                </StackLayout>
+                <ListView x:Name="ListRestaurantes" HasUnevenRows="True" BackgroundColor="#15261C" SeparatorColor="#8EAC18" ItemSelected="ListRestaurantes_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="220"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Url}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0"/>
+                                <Label Text="{Binding Nombre}" TextColor="#8EAC18" FontSize="Medium" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Column="1" Grid.Row="0"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

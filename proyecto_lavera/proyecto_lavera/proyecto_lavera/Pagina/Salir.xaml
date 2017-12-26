@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyecto_lavera.Pagina.Salir" BackgroundColor="#15261C">
+    <ContentPage.Content>
+        <StackLayout >
+            <Label TextColor="#8EAC18" Text="¿Quieres salir de la Aplicación?" FontSize="Large" HorizontalOptions="Center" Margin="0,150,0,50"/>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="Exit" Text="SI" FontSize="Medium" BackgroundColor="#8EAC18" TextColor="#15261C" HorizontalOptions="CenterAndExpand" Clicked="Exit_Clicked"/>
+                <StackLayout Orientation="Vertical">
+                    <Button x:Name="NoSalir" Text="NO" FontSize="Medium" BackgroundColor="#FF4800" TextColor="#15261C" Margin="0,0,50,0" Clicked="NoSalir_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyecto_lavera.Pagina.Animacion" BackgroundColor="#15261C">
+    <ContentPage.Content>
+        <StackLayout IsEnabled="False">
+            <Image x:Name="Imagen" Source="logodv" Opacity="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

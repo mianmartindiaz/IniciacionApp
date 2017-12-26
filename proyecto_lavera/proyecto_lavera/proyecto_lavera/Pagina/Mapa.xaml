@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyecto_lavera.Pagina.Mapa"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+              >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal"  BackgroundColor="#8EAC18">
+                <Image x:Name="menu" Source="inicio_icon" HeightRequest="30" WidthRequest="30" Margin="0,5,0,0"/>
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="Cabecera" Margin="30,0,0,0" HorizontalOptions="Center" TextColor="#15261C" FontSize="Large" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                </StackLayout>
+            </StackLayout>
+            <maps:Map 
+            WidthRequest="320" 
+            HeightRequest="200"
+            x:Name="MyMap"
+            IsShowingUser="true"
+            MapType="Street">
+            </maps:Map>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
